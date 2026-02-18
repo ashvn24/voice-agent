@@ -1,0 +1,22 @@
+=== Vidur AI Session — 2026-02-18 17:34 ===
+
+[17:34:50] Vidur: Hey! I'm Vidur, your counseling buddy. What's your name?
+
+[17:35:04] Student: Ente Peru Ashwin
+
+[17:35:40] Vidur: Ashwin, I'm so glad you feel comfortable talking to me. You sound a bit overwhelmed lately. What's been on your mind that's making you feel this way?
+
+[17:36:06] Student: enikku engineering in
+
+[17:36:13] Vidur: You're considering an engineering program, but things are getting a bit too technical for you right now. Is it the coursework or something else related to your plans that's causing you some concern?
+
+[17:36:39] Student: ennodu malayalathil samsari
+
+[17:36:43] Vidur: Aamayavu niyanthranam illathe?
+
+[17:37:08] Student: Indore Municipal
+
+[17:37:13] Vidur: You're thinking of studying in India, but Indore is not in Kerala. Are you looking for opportunities in your home state instead?
+
+
+--- Session ended 17:37:21 ---

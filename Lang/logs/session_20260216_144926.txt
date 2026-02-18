@@ -1,0 +1,14 @@
+=== Vidur AI Session — 2026-02-16 14:49 ===
+
+[14:49:44] Vidur: Hey! I'm Vidur, your counseling buddy. What's your name?
+
+[14:49:58] Student: hi my name is Ashwin
+
+[14:50:22] Vidur: Sorry, I missed that. Could you say that again?
+
+[14:50:35] Student: my name is Ashwin
+
+[14:50:40] Vidur: Sorry, I missed that. Could you say that again?
+
+
+--- Session ended 14:50:42 ---

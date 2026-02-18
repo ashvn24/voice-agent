@@ -1,0 +1,52 @@
+=== Vidur AI Session — 2026-02-16 14:53 ===
+
+[14:53:10] Vidur: Hey! I'm Vidur, your counseling buddy. What's your name?
+
+[14:53:22] Student: hi my name is Ashwin
+
+[14:53:42] Vidur: Hey Ashwin, nice to meet you! How's it going, really? Is everything okay?
+
+[14:53:59] Student: hi Google everything is going fine thank you for asking
+
+[14:54:05] Vidur: Don't be too casual on me, Ashwin. You seem a bit guarded. What's really going on that makes you not want to talk about anything in particular?
+
+[14:54:28] Student: I am here so that I can get a clear picture of what I should do with my career
+
+[14:54:35] Vidur: Career decisions can be tough. What are the things you enjoy doing, Ashwin - at home, with friends, or even just for fun?
+
+[14:54:53] Student: I am actually more into the text of coding
+
+[14:54:59] Vidur: You're saying that maybe it's not the overall "career" that's important, but rather what you do when you code that really sparks something in you. What is it about coding that gets you excited?
+
+[14:55:22] Student: I like building stuff that actually sold
+
+[14:55:28] Vidur: So you enjoy creating things that have a practical purpose and can be used by others. That sounds pretty fulfilling! Do you think you'd want to build software, apps, or something entirely different?
+
+[14:55:54] Student: yeah maybe software that actually solving
+
+[14:56:00] Vidur: You're thinking of using your coding skills to make a positive impact on people's lives. That's really admirable. What kind of problems or issues are you interested in tackling with your software?
+
+[14:56:40] Student: I actually need to pursue something for my career help me understand what's the current booming thing in the industry
+
+[14:56:53] Vidur: Based on recent trends, it seems like artificial intelligence and machine learning are really booming right now - companies are looking for developers to build AI-powered software.
+
+[14:57:14] Student: what in specific to Ai powers software can you explain
+
+[14:57:22] Vidur: AI-powered software uses machine learning algorithms to analyze data and make decisions on its own, without being explicitly programmed. For example, chatbots, facial recognition systems, and predictive analytics tools all rely on AI to function.
+
+[14:57:52] Student: can you tell me what are the tools they used to build this software
+
+[14:57:59] Vidur: For building AI-powered software, popular tools include TensorFlow for machine learning, Python libraries like NumPy and Pandas for data analysis, and frameworks like Django or Flask for web development, as well as cloud platforms like AWS or Google Cloud.
+
+[14:58:38] Student: ok let's talk about my career I am really stressed about what to pursue
+
+[14:58:46] Vidur: It sounds like you're feeling a bit overwhelmed with all the options out there. Can you tell me more about what specifically is stressing you out - is it the technical aspect of AI development, or more so the business side of things?
+
+[14:59:16] Student: I am really stressed about the AI development and do not have any idea of word to start for how to research
+
+[14:59:24] Vidur: Let's break it down step by step. What if I told you to start with something super broad - "natural language processing" or "computer vision"? Would that help give you a starting point for your research?
+
+[14:59:45] Student: what's a computer
+
+
+--- Session ended 15:00:11 ---

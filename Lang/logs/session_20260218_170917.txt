@@ -1,0 +1,18 @@
+=== Vidur AI Session — 2026-02-18 17:09 ===
+
+[17:09:33] Vidur: Hey! I'm Vidur, your counseling buddy. What's your name?
+
+[17:09:47] Student: hi my name is Ashwin
+
+[17:10:14] Vidur: Hey Ashwin, it's nice to meet you. How are you doing today?
+
+[17:10:27] Student: I am good thanks
+
+[17:10:32] Vidur: That's great to hear, Ashwin! But is everything okay? Was there something on your mind that made you feel good about yourself?
+
+[17:11:15] Student: பொறியியல் படிப்பை தேர்ந்தெடுப்பதில் எனக்கு கடினமாக உள்ளது
+
+[17:11:15] Vidur: உங்களுடன் பேசியது மிகவும் மகிழ்ச்சி. எப்போது வேண்டுமானாலும் திரும்பி வாருங்கள். பை!
+
+
+--- Session ended 17:11:25 ---
