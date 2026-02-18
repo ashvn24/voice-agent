@@ -12,6 +12,8 @@ Tools available:
 Routing: Intent detection decides which tool(s) to use per message.
 """
 
+import re
+
 from langchain_ollama import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
@@ -114,6 +116,86 @@ MOOD_SIGNALS = [
 ]
 
 
+# ─────────────────────────────────────────────────────────────
+# MALAYALAM SIGNALS  (Unicode script — used when STT returns ml-IN text)
+# ─────────────────────────────────────────────────────────────
+
+_MALAYALAM_RE = re.compile(r'[\u0D00-\u0D7F]')
+
+MALAYALAM_TOOL_ROUTES = [
+    # ── Calculator ──
+    {
+        "tool": "calculator",
+        "signals": [
+            "ജിപിഎ", "സിജിപിഎ", "ഗ്രേഡ്", "ഗ്രേഡ് പോയിന്റ്",
+            "ശതമാനം", "കണക്ക്", "കണക്കുകൂട്ടൽ",
+            "ലോൺ", "ഇഎംഐ", "മൊത്തം ചെലവ്", "പലിശ",
+            "ക്രെഡിറ്റ്", "മൊത്തം",
+        ],
+    },
+    # ── Job Search ──
+    {
+        "tool": "job_search",
+        "signals": [
+            "ജോലി", "ഇന്റേൺഷിപ്പ്", "നിയമനം", "കരിയർ",
+            "പ്ലേസ്‌മെന്റ്", "ഒഴിവ്", "ജോലി ഒഴിവ്",
+            "ഫ്രഷർ ജോബ്", "പാർട്ട് ടൈം", "ഫുൾ ടൈം",
+        ],
+    },
+    # ── Course Recommender ──
+    {
+        "tool": "course_search",
+        "signals": [
+            "കോഴ്‌സ്", "ട്യൂട്ടോറിയൽ", "സർട്ടിഫിക്കറ്റ്",
+            "ഓൺലൈൻ ക്ലാസ്", "ഓൺലൈൻ പഠനം", "ഓൺലൈൻ കോഴ്‌സ്",
+            "എൻപിടിഇഎൽ", "കോഴ്‌സേര", "യൂഡെമി", "എഡ്‌എക്‌സ്",
+            "പഠിക്കാൻ", "പ്രോഗ്രാമിംഗ് പഠനം",
+        ],
+    },
+    # ── Campus Knowledge Base ──
+    {
+        "tool": "campus_kb",
+        "signals": [
+            "കോളേജ്", "യൂണിവേഴ്‌സിറ്റി", "ക്യാംപസ്",
+            "ഫീസ്", "ഹോസ്റ്റൽ", "ലൈബ്രറി",
+            "സിലബസ്", "പരീക്ഷ", "ടൈംടേബിൾ",
+            "ഡിപ്പാർട്ട്‌മെന്റ്", "ഫാക്കൽറ്റി", "പ്രൊഫസർ",
+            "അഡ്മിഷൻ", "ഹാജർ", "ഹോളിഡേ",
+            "അക്കാദമിക്", "ബ്ലോക്ക്ലിസ്റ്റ്", "ഗ്രേഡ് കാർഡ്",
+        ],
+    },
+    # ── Web Search (general fallback) ──
+    {
+        "tool": "web_search",
+        "signals": [
+            "എന്താണ്", "എന്ത്", "എങ്ങനെ", "വിശദീകരിക്കൂ",
+            "അർഥം", "വ്യത്യാസം", "ശമ്പളം", "ഭാവി",
+            "സ്കോളർഷിപ്പ്", "ഫിനാൻഷ്യൽ എയ്ഡ്",
+            "റോഡ്‌മാപ്പ്", "ആർക്കിടെക്ചർ",
+        ],
+    },
+]
+
+MALAYALAM_MOOD_SIGNALS = [
+    "ദുഃഖം", "ദുഖം", "സങ്കടം", "ദേഷ്യം", "ഭയം",
+    "ആകുലത", "ഉദ്വേഗം", "ക്ഷീണം", "ക്ഷീണിച്ചു",
+    "സ്ട്രെസ്", "സ്ട്രെസ്സ്", "ഒറ്റപ്പെടൽ", "ഒറ്റപ്പെട്ടു",
+    "ആകുലപ്പെടുന്നു", "വിഷമം", "നിരാശ", "നിരാശയ്ക്ക്",
+    "അസ്വസ്ഥത", "ഉറക്കമില്ല", "ഉറങ്ങാൻ",
+    "കരയുന്നു", "കരഞ്ഞു", "ശ്വാസം മുട്ടൽ",
+    "ഭ്രാന്ത്", "ഭ്രമം", "ഭ്രമിക്കുന്നു",
+    "സന്തോഷം", "ഉത്സാഹം", "കൊള്ളാം", "അടിപൊളി",
+    "ശരിയാകില്ല", "മടുത്തു", "ഇനി വേണ്ട",
+]
+
+MALAYALAM_CHAT_ONLY_SIGNALS = [
+    "ഹലോ", "ഹായ്", "നമസ്കാരം", "ഹേ",
+    "ഒക്കേ", "ശരി", "ആണ്", "ഇല്ല", "ഉം", "ഓ",
+    "നന്ദി", "ബൈ", "ശുഭ", "ഗുഡ് മോണിംഗ്",
+    "ഹ്ഹ", "അതെ", "ഇല്ലേ",
+]
+
+
 def detect_intent(text: str) -> dict:
     """
     Analyze student message and return:
@@ -123,9 +205,41 @@ def detect_intent(text: str) -> dict:
         "is_chat_only": True/False,
         "search_query": "cleaned query for the tool"
       }
+    Supports both English and Malayalam (Unicode) input.
     """
     lower = text.lower().strip()
     result = {"tool": None, "track_mood": False, "is_chat_only": False, "search_query": text}
+
+    # ── Malayalam path: when STT returns ml-IN Unicode text ──
+    if _MALAYALAM_RE.search(text):
+        # Mood check (parallel — doesn't block tool routing)
+        for signal in MALAYALAM_MOOD_SIGNALS:
+            if signal in text:
+                result["track_mood"] = True
+                break
+
+        # Pure-chat check
+        for signal in MALAYALAM_CHAT_ONLY_SIGNALS:
+            if signal in text:
+                result["is_chat_only"] = True
+                return result
+
+        # Very short Malayalam messages are conversational
+        if len(text.split()) < 3:
+            result["is_chat_only"] = True
+            return result
+
+        # Tool routing using Malayalam signals
+        for route in MALAYALAM_TOOL_ROUTES:
+            for signal in route["signals"]:
+                if signal in text:
+                    result["tool"] = route["tool"]
+                    result["search_query"] = text   # pass raw Malayalam to tool
+                    return result
+
+        return result
+
+    # ── English path (original logic) ──
 
     # Check for mood signals (runs alongside other tools)
     for signal in MOOD_SIGNALS:

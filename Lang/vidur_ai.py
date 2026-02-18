@@ -393,12 +393,20 @@ class VidurAI:
     def is_exit(self, text: str) -> bool:
         lower = text.lower().strip()
         exit_words_en = ["goodbye", "bye", "exit", "quit", "stop", "end session"]
-        exit_words_ta = ["പോയി വരാം", "ബൈ", "നിർത്തൂ", "കഴിഞ്ഞു"]
-        return any(w in lower for w in exit_words_en) or any(w in text for w in exit_words_ta)
+        exit_words_ml = [
+            "പോയി വരാം", "ബൈ", "നിർത്തൂ", "കഴിഞ്ഞു",
+            "ഇനി വേണ്ട", "അവസാനിക്കൂ", "നിർത്തുക", "പോകുന്നു",
+        ]
+        return any(w in lower for w in exit_words_en) or any(w in text for w in exit_words_ml)
 
     def is_reset(self, text: str) -> bool:
         lower = text.lower().strip()
-        return "reset" in lower or "new conversation" in lower or "പുതിയ സംഭാഷണം" in text
+        reset_words_ml = ["പുതിയ സംഭാഷണം", "പുനഃരാരംഭിക്കൂ", "വീണ്ടും തുടങ്ങൂ"]
+        return (
+            "reset" in lower
+            or "new conversation" in lower
+            or any(w in text for w in reset_words_ml)
+        )
 
     def run(self):
         if not self.initialize():
